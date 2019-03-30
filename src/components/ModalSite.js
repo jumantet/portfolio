@@ -1,5 +1,6 @@
 import React from "react";
 import Modal from "react-modal";
+import YouTube from "react-youtube";
 
 const customStyles = {
   content: {
@@ -8,11 +9,21 @@ const customStyles = {
     right: "auto",
     bottom: "auto",
     marginRight: "-50%",
-    transform: "translate(-50%, -50%)"
+    transform: "translate(-50%, -50%)",
+    height: "600px",
+    overflowY: "scroll"
   }
 };
 class ModalSite extends React.Component {
   render() {
+    const opts = {
+      alignSelf: "center",
+      width: 400,
+      playerVars: {
+        // https://developers.google.com/youtube/player_parameters
+        autoplay: 1
+      }
+    };
     return (
       <div>
         <Modal
@@ -72,7 +83,9 @@ class ModalSite extends React.Component {
                 })
               : null}
           </ul>
-          <h4>Demo</h4>
+          <div className="video">
+            <YouTube videoId={this.props.idVideo} opts={opts} />
+          </div>
         </Modal>
       </div>
     );

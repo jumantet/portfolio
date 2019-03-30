@@ -289,6 +289,26 @@ h2::after {
 #buttonVisit:hover {
   transform: scale(1.1);
 }
+
+.video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalImage {
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.mytodolistLogo {
+  font-family: "Lobster Two";
+  color: #66cdaa;
+  font-size: 65px;
+  margin: 0;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
 /*ANIMATION*/
 
 @-webkit-keyframes text-flicker-in-glow {
@@ -1256,5 +1276,16 @@ h3 {
   .text-reactnative {
     width: 50px;
     font-size: 12px;
+  }
+
+  .description {
+    font-size: 12px;
+  }
+  .modalImage {
+    height: 50px;
+  }
+  .mytodolistLogo {
+    font-size: 40px;
+    padding: 0 10px;
   }
 }

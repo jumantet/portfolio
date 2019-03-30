@@ -54,6 +54,10 @@ class Home extends React.Component {
     scroller.scrollTo("skills", { smooth: true, offset: -220 });
   }
 
+  scrollToProjects() {
+    scroller.scrollTo("projects", { smooth: true, offset: -220 });
+  }
+
   handleOpenModal = name => {
     if (name === "leboncoin") {
       this.setState({ isLeboncoinOpened: true });
@@ -114,8 +118,8 @@ class Home extends React.Component {
                 <p className="animatedText">
                   Recently graduated from a 10-weeks intensive bootcamp named
                   "Le Réacteur" in Paris, I invite you to browse this website in
-                  order to discover all the fullstack skills I developed since
-                  the last 2 months as well as the projects I've made.
+                  order to discover all the fullstack skills I have developed
+                  during the last 2 months as well as the projects I've made.
                 </p>
               </Typist>
             </div>
@@ -155,9 +159,29 @@ class Home extends React.Component {
                 <ReactNative />
               </div>
             </div>
+            <div
+              style={{
+                marginBottom: "20px",
+                height: "80px",
+                width: "80px",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center"
+              }}
+              className="slide-in-fwd-bottom"
+            >
+              <i
+                onClick={this.scrollToProjects}
+                onMouseEnter={() => this.handleMouseHover("skills")}
+                onMouseLeave={() => this.handleMouseHover("skills")}
+                className="fas fa-chevron-circle-down"
+              />
+            </div>
           </div>
           <div className="containerProjects">
             <h2 style={{ margin: 0, marginBottom: "50px" }}>PROJECTS</h2>
+            <Element name="projects" />
             <ul className="projectList">
               <li
                 onClick={() => this.handleOpenModal("leboncoin")}
@@ -243,28 +267,17 @@ class Home extends React.Component {
                 this.state.isAirbnbOpened ? (
                   <img
                     alt="airbnb"
-                    style={{ height: "80px", marginBottom: "10px" }}
+                    className="modalImage"
                     src={require("../assets/images/airbnb.png")}
                   />
                 ) : this.state.isLeboncoinOpened ? (
                   <img
                     alt="leboncoin"
-                    style={{ height: "80px", marginBottom: "10px" }}
+                    className="modalImage"
                     src={require("../assets/images/leboncoin.png")}
                   />
                 ) : this.state.isMytodolistOpened ? (
-                  <p
-                    style={{
-                      fontFamily: "Lobster Two",
-                      color: "#66cdaa",
-                      fontSize: "65px",
-                      margin: 0,
-                      marginBottom: "10px",
-                      fontWeight: "bold"
-                    }}
-                  >
-                    myTodolist
-                  </p>
+                  <p className="mytodolistLogo">myTodolist</p>
                 ) : null
               }
               description={
@@ -343,6 +356,15 @@ class Home extends React.Component {
                   ? "https://mytodolist-client.herokuapp.com/"
                   : this.state.isLeboncoinOpened
                   ? "https://leboncoin-client.herokuapp.com/"
+                  : null
+              }
+              idVideo={
+                this.state.isLeboncoinOpened
+                  ? "yPPngzHGQ0I"
+                  : this.state.isAirbnbOpened
+                  ? "vI-IICfgWss"
+                  : this.state.isMytodolistOpened
+                  ? "YQTPrzEhA6k"
                   : null
               }
             />
