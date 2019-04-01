@@ -289,7 +289,14 @@ class Home extends React.Component {
                     developed the front end part enjoying an API built by an
                     other person. I built it thanks to the open source toolchain
                     Expo and you are able to find the source code on my Github
-                    clicking here :
+                    clicking{" "}
+                    <a
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      href="https://github.com/jumantet"
+                    >
+                      here
+                    </a>
                   </p>
                 ) : this.state.isLeboncoinOpened ? (
                   <p className="description">
@@ -297,7 +304,14 @@ class Home extends React.Component {
                     replica of Leboncoin's website using the framework React. I
                     built the front end as well as the back end part. They are
                     hosted on Heroku and you can find the two source codes on my
-                    Github clicking here :
+                    Github clicking{" "}
+                    <a
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      href="https://github.com/jumantet"
+                    >
+                      here
+                    </a>
                   </p>
                 ) : this.state.isMytodolistOpened ? (
                   <p className="description">
@@ -310,7 +324,14 @@ class Home extends React.Component {
                     videos, I have also integrated a livechat using Socket IO.
                     The back and the front are hosted on Heroku (sorry for the
                     loading delay...) and you can also find the source code on
-                    my Github clicking here :
+                    my Github clicking{" "}
+                    <a
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      href="https://github.com/jumantet"
+                    >
+                      here
+                    </a>
                   </p>
                 ) : null
               }
