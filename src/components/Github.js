@@ -4,7 +4,7 @@ class Github extends React.Component {
   render() {
     return (
       <div className="github">
-        <i class="fab fa-github img-github" />
+        <i className="fab fa-github img-github" />
         <h4 className="text-github">Github</h4>
       </div>
     );

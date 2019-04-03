@@ -11,7 +11,7 @@ import Css3 from "../components/Css3";
 import NodeJS from "../components/NodeJS";
 import Github from "../components/Github";
 import ReactNative from "../components/ReactNative";
-
+import Modal from "react-modal";
 import ModalSite from "../components/ModalSite";
 class Home extends React.Component {
   constructor(props) {
@@ -77,6 +77,10 @@ class Home extends React.Component {
       this.setState({ isMytodolistOpened: false });
     }
   };
+
+  componentDidMount() {
+    Modal.setAppElement("body");
+  }
 
   render() {
     return (
